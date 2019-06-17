@@ -2,7 +2,7 @@
 
 
 .page-header {
-    background-color: #ff9400;
+    background: #000 url(image.jpg);
     margin-top: 0;
     padding: 20px 20px 40px 450px;
 }
