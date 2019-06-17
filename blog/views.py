@@ -6,6 +6,12 @@ from .forms import PostForm, CommentForm
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
+'''client_id = '7021952'                                      
+client_secret = 'stIHRvDcAxhPTA4WO43g'                      
+redirect_uri = 'https://serg666999.pythonanywhere.com'''
+
+'''url = https://oauth.vk.com/authorize?client_id=7021952&display=page&redirect_uri=https://serg666999.pythonanywhere.com&scope=friends&response_type=code&v=5.95'''
+
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
@@ -73,7 +79,7 @@ def add_comment_to_post(request, pk):
             comment = form.save(commit=False)
             comment.post = post
             comment.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('https://oauth.vk.com/authorize?client_id=7021952&display=page&redirect_uri=https://serg666999.pythonanywhere.com&scope=friends&response_type=code&v=5.95', pk=post.pk)
     else:
         form = CommentForm()
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
