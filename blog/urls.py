@@ -1,6 +1,7 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.urls import path
 from . import views
+
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -16,4 +17,9 @@ urlpatterns = [
     path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
     path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
     path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
+    path('vkontakte', views.vk, name='vk'),
+    path('accounts/register/', views.MyRegisterFormView.as_view(), name="register"),
+
+
+
 ]
